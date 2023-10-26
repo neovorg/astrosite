@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+    firstName: "Preston",
+    country: "Antarctica",
+    occupation: "Wanderer",
+    hobbies: ["Collecting treasures" , "killing monsters", "unlocking the secrets of the universe"],
+}
+
+const skills = ["Rallying cry", "Another settlement", "High HP"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,13 +21,17 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
-        <h1>About Me</h1>
-        <p>You wanna know about me? o(*////▽////*)q</p>
+        <h1>{pageTitle}</h1>
+        {happy && <p>You wanna know about me? 😳🥺😊</p>}
+        {goal === 3 ? <p>My goal is to finish this shit in {goal} days.</p> : <p>I dunno...</p>}
+        {finished && <p>I finally finished the tutorial!</p>}
+        <p>My skills are:</p>
+        {skills.map(skill => <li>{skill}</li>)}
     </body>
 </html>
