@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About Me";
 
@@ -42,12 +43,13 @@ const textCase = "uppercase";
         </style>
     </head>
     <body>
-        <Navigation />
+        <Header />
         <h1>{pageTitle}</h1>
         {happy && <p>You wanna know about me? 😳🥺😊</p>}
         {goal === 3 ? <p>My goal is to finish this shit in {goal} days.</p> : <p>I dunno...</p>}
         {finished && <p>I finally finished the tutorial!</p>}
         <p>My skills are:</p>
         {skills.map(skill => <li class="skill">{skill}</li>)}
+        <Footer />
     </body>
 </html>
